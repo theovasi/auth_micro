@@ -1,0 +1,20 @@
+org: theovasi
+app: auth-micro
+service: auth-micro
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: '20201221'
+  region: eu-west-1
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true

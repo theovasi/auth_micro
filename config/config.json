@@ -1,0 +1,17 @@
+{
+  "development": {
+    "username": "theovasi",
+    "password": "bluecheese",
+		"server": "auth-cluster",
+    "host": "ausla.mongodb.net",
+    "database": "auth-dev",
+    "dialect": "mongo"
+  },
+  "test": {
+    "username": "admin",
+    "password": "admin",
+    "database": "auth-dev",
+    "host": "127.0.0.1",
+    "dialect": "mongo"
+  }
+}
