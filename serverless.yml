@@ -16,5 +16,21 @@ functions:
     events:
       - http:
           path: /
-          method: get
-          cors: true
+          method: ANY
+          cors:
+            origin: "*"
+      - http:
+          path: /login
+          method: ANY
+          cors:
+            origin: "*"
+      - http:
+          path: /signup
+          method: ANY
+          cors:
+            origin: "*"
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors:
+            origin: "*"

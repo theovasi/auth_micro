@@ -78,10 +78,6 @@ module.exports = {
           });
         } else { 
           return res.json({
-						headers: {
-							'Access-Control-Allow-Origin': '*',
-							'Access-Control-Allow-Credentials': true,
-						},
 					});
         }
       })
@@ -93,7 +89,13 @@ module.exports = {
     let userId = jwt.verify(token, 'v3rys3cr3t', 'base64').userId;
     User
       .findOne({id: userId })
-        .then(user => res.status(200).json({ username: user.username }));
+        .then(user => res.status(200).json({ 
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+						'Access-Control-Allow-Credentials': true,
+					},
+					username: user.username
+				}));
   },
 
   verifyLogin: (req, res, next) => {
