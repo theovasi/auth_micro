@@ -3,7 +3,7 @@ name: Deploy main on serverless
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -20,7 +20,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - name: serverless deploy
-      uses: serverless/github-action@main
+      uses: serverless/github-action@master
       with:
         args: deploy
       env:
