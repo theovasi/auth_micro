@@ -1,9 +1,7 @@
 const express = require('express');
 const serverless = require('serverless-http');
 const routes = require('./routes/');
-const cors = require('cors');
 const helmet = require('helmet');
-const bodyParser = require('body-parser');
 
 
 const app = express();
