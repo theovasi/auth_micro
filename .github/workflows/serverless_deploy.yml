@@ -1,4 +1,4 @@
-name: Deploy master branch
+name: Deploy main on serverless
 
 on:
   push:
@@ -20,8 +20,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - name: serverless deploy
-      uses: serverless/github-action@master
-      with:
+      uses: serverless/github-action@main
         args: deploy
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
