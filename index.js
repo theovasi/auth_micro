@@ -1,22 +1,22 @@
-const express = require('express');
-const serverless = require('serverless-http');
-const routes = require('./routes/');
-const helmet = require('helmet');
+const express = require("express");
+var bodyParser = require("body-parser");
+const routes = require("./routes/");
+var cors = require("cors");
+const helmet = require("helmet");
 
+const port = 5000;
+// CORS is enabled for the selected origins
 
 const app = express();
-const router = express.Router();
-
-routes(router);
 
 // Middlewares
-app
-	.use((req, res, next) => {
-		res.append('Access-Control-Allow-Origin', '*');
-		res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-		res.append('Access-Control-Allow-Headers', '*');
-		next();
-	})
-	.use('/', router);
+app.use(cors());
+app.use(helmet());
 
-module.exports.handler = serverless(app);
+const router = express.Router();
+routes(router);
+app.use("/", router);
+
+app.listen(port, () => {
+  console.log("Server running on port: " + port);
+});

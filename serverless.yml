@@ -1,11 +1,11 @@
 service: auth-micro
 
-frameworkVersion: '2'
+frameworkVersion: "2"
 
 provider:
   name: aws
-  runtime: nodejs14.x
-  lambdaHashingVersion: '20201221'
+  runtime: nodejs19.x
+  lambdaHashingVersion: "20201221"
   region: eu-west-1
 
 functions:

@@ -2,7 +2,7 @@
   "development": {
     "username": "theovasi",
     "password": "bluecheese",
-		"server": "auth-cluster",
+    "server": "auth-cluster",
     "host": "ausla.mongodb.net",
     "database": "auth-dev",
     "dialect": "mongo"
