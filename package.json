@@ -4,8 +4,8 @@
   "description": "A minimal authentication server",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon src/server/index.js",
-    "start": "node src/server/index.js"
+    "test": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Theo Vasileiadis",
   "license": "ISC",
