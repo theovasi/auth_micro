@@ -11,9 +11,7 @@ const port = 5000;
 const app = express();
 
 // Middlewares
-app.use(cors({
-  origin: '*'
-}));
+app.use(cors());
 app.use(helmet());
 
 const router = express.Router();
