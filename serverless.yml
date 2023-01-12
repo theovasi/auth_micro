@@ -1,4 +1,5 @@
 app: auth-micro
+service: auth-micro
 
 frameworkVersion: "2"
 
